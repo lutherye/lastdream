@@ -1,8 +1,6 @@
 
 export var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
-
-var keys = [];
+export var ctx = canvas.getContext("2d");
 
 export var char = {
     charHeight: 20,
@@ -15,6 +13,8 @@ export var char = {
 };
 
 var speed = 7;
+
+var keys = [];
 
 document.addEventListener("keydown", function (e) {
     keys[e.keyCode] = true;
@@ -37,7 +37,7 @@ export function draw() {
     ctx.clearRect(0, 0, canvas.clientWidth, canvas.height);
     ctx.beginPath();
     ctx.rect(char.x, char.y, char.charWidth, char.charHeight);
-    ctx.fillStyle = "blue";
+    ctx.fillStyle = "#483D8B";
     ctx.fill();
     ctx.closePath();
     if (keys[65]) {
