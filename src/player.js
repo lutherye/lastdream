@@ -1,76 +1,64 @@
 
-export var canvas = document.getElementById("myCanvas");
-export var ctx = canvas.getContext("2d");
+class Char {
+    constructor(ctx) {
+        this.ctx = ctx;
+        this.charHeight = 10;
+        this.charWidth = 10;
+        this.x = (ctx.canvas.width - 20) / 2;
+        this.y = (ctx.canvas.height - 20);
+        this.vel_x = 0;
+        this.vel_y = 0;
+        this.jumped = true;
+        this.speed = 7;
+    }
 
-export var char = {
-    charHeight: 20,
-    charWidth: 20,
-    x: (canvas.width - 20) / 2,
-    y: (canvas.height - 20),
-    vel_x: 0,
-    vel_y: 0,
-    jumped: true,
-};
+    hitBottom() {
+        var bottom = (this.ctx.canvas.height - this.charHeight);
+        if (this.y >= bottom) {
+            this.y = bottom;
+            this.jumped = false;
+            this.vel_y = 0;
+        }
+    }
+    leftHandle() {
+        if (this.vel_x < this.speed) {
+            this.vel_x -= 0.5;
+        }
+    }
+    rightHandle() {
+        if (this.vel_x < this.speed) {
+            this.vel_x += 0.5;
+        }
+    }
+    jumpHandle() {
+        if (this.jumped == false) {
+            this.vel_y -= 20;
+            this.jumped = true;
+        }
+    }
 
-var speed = 7;
+    drawChar() {
+        this.ctx.clearRect(0, 0, this.ctx.canvas.clientWidth, this.ctx.canvas.height);
+        this.ctx.beginPath();
+        this.ctx.arc(this.x, this.y, this.charWidth, this.charHeight, Math.PI * 5);
+        this.ctx.fillStyle = "#483D8B";
+        this.ctx.fill();
+        this.ctx.closePath();
 
-var keys = [];
+        if (this.x <= 0) {
+            this.x = this.ctx.canvas.width - this.charWidth * 2;
+        }
+        if (this.x >= this.ctx.canvas.width - this.charWidth) {
+            this.x = 0 + this.charWidth;
+        }
+        this.vel_y += 0.7;
+        this.y += this.vel_y;
+        this.x += this.vel_x;
+        this.vel_x *= 0.9;
+        this.vel_y *= 0.9;
 
-document.addEventListener("keydown", function (e) {
-    keys[e.keyCode] = true;
-});
-document.addEventListener("keyup", function (e) {
-    keys[e.keyCode] = false;
-});
-
-function hitBottom() {
-    var bottom = (canvas.height - char.charHeight);
-    if (char.y >= bottom) {
-        char.y = bottom;
-        char.jumped = false;
-        char.vel_y = 0;
+        this.hitBottom();
     }
 }
 
-export function draw() {
-
-    ctx.clearRect(0, 0, canvas.clientWidth, canvas.height);
-    ctx.beginPath();
-    ctx.rect(char.x, char.y, char.charWidth, char.charHeight);
-    ctx.fillStyle = "#483D8B";
-    ctx.fill();
-    ctx.closePath();
-    if (keys[65]) {
-        if (char.vel_x < speed) {
-            char.vel_x -= 0.5;
-        }
-    }
-    if (keys[68]) {
-        if (char.vel_x < speed) {
-            char.vel_x += 0.5;
-        }
-    }
-    if (keys[32] && char.jumped == false) {
-            char.vel_y -= 20;
-            char.jumped = true;
-        }
-
-    if ( char.x <= 0 ) {
-        char.x = canvas.width - char.charWidth * 2;
-    }
-    if ( char.x >= canvas.width - char.charWidth) {
-        char.x = 0 + char.charWidth;
-    }
-        
-    char.vel_y += 0.7;
-    char.y += char.vel_y;
-    char.x += char.vel_x;
-    char.vel_x *= 0.9;
-    char.vel_y *= 0.9;
-
-    hitBottom();
-
-}
-
-setInterval(draw, 7);
-
+export default Char;

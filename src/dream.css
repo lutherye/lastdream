@@ -4,3 +4,13 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+#play {
+    background-color: aliceblue;
+    color: black;
+    text-align: center;
+    padding: 20px 15px;
+    position: absolute;
+    top: 180px;
+
+}
