@@ -76,7 +76,7 @@ class Game {
         }
 
         if (scoreCount < 5 ) {
-            if (Math.random() < 0.02) {
+            if (Math.random() < 0.025) {
             for (let i = 0; i < 9; i++) {
                 var x = Math.random(i) * canvas.width;
             }
@@ -84,7 +84,7 @@ class Game {
             newClouds.push(new Cloud(ctx, x, y));
             }
         } else if (scoreCount >= 5) {
-            if (Math.random() < 0.03) {
+            if (Math.random() < 0.035) {
             for (let i = 0; i < 9; i++) {
                 var x = Math.random(i) * canvas.width;
             }
@@ -118,7 +118,7 @@ class Game {
             }
         }
         } else if (scoreCount >= 30) {
-            if (Math.random() < 0.35) {
+            if (Math.random() < 0.4) {
                 for (let i = 0; i < 9; i++) {
                     var x = Math.random(i) * canvas.width;
                 }
@@ -126,7 +126,7 @@ class Game {
                 newClouds.push(new Cloud(ctx, x, y));
             }
         } else if (scoreCount >= 35) {
-            if (Math.random() < 0.39) {
+            if (Math.random() < 0.45) {
                 for (let i = 0; i < 9; i++) {
                     var x = Math.random(i) * canvas.width;
                 }
@@ -134,7 +134,7 @@ class Game {
                 newClouds.push(new Cloud(ctx, x, y));
             }
         } else if (scoreCount >= 40) {
-            if (Math.random() < 0.49) {
+            if (Math.random() < 0.55) {
                 for (let i = 0; i < 9; i++) {
                     var x = Math.random(i) * canvas.width;
                 }

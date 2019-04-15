@@ -6,7 +6,7 @@ const ctx = canvas.getContext("2d");
 
 let game = new Game();
 let gameOver = false;
-let score = new Score();
+
 
 
 
