@@ -51,10 +51,10 @@ class Char {
         this.ctx.closePath();
 
         if (this.x <= 0) {
-            this.x = this.ctx.canvas.width - this.charWidth * 2;
+            this.x = this.ctx.canvas.width - this.charWidth * 1.001;
         }
         if (this.x >= this.ctx.canvas.width - this.charWidth) {
-            this.x = 0 + this.charWidth;
+            this.x = 0 ;
         }
         this.vel_y += 0.5;
         this.y += this.vel_y;
