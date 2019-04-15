@@ -1,3 +1,4 @@
+
 const img = new Image();
 img.src = "../lastdream/img/ccc.png";
 
@@ -11,11 +12,11 @@ class Cloud {
     }
 
     draw(){ 
-        debugger
             this.ctx.drawImage(img, 
                 0, 0, 200, 105,
                 this.x, ( this.y ), this.cloudWidth, this.cloudHeight);
-                this.y += 0.5;
+            this.y += 0.5;
+
     }
 
     collide(char) {

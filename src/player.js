@@ -20,22 +20,24 @@ class Char {
             this.y = bottom;
             this.jumped = false;
             this.vel_y = 0;
+            return true;
         }
+        return false;
     }
 
     leftHandle() {
         if (this.vel_x < this.speed) {
-            this.vel_x -= 0.5;
+            this.vel_x -= 0.7;
         }
     }
     rightHandle() {
         if (this.vel_x < this.speed) {
-            this.vel_x += 0.5;
+            this.vel_x += 0.7;
         }
     }
     jumpHandle() {
         if (this.jumped == false) {
-            this.vel_y -= 50;
+            this.vel_y -= 30;
             this.jumped = true;
         }
     }
@@ -54,11 +56,11 @@ class Char {
         if (this.x >= this.ctx.canvas.width - this.charWidth) {
             this.x = 0 + this.charWidth;
         }
-        this.vel_y += 0.7;
+        this.vel_y += 0.5;
         this.y += this.vel_y;
         this.x += this.vel_x;
-        this.vel_x *= 0.9;
-        this.vel_y *= 0.7;
+        this.vel_x *= 0.8;
+        this.vel_y *= 0.9;
         // if (this.y < this.maxA) {
         //     this.y = this.maxA;
         // } 

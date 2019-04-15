@@ -1,15 +1,13 @@
 
 import Char from './player';
-import MapItem from './map';
 import Cloud from './cloud';
-import { rejects } from 'assert';
+import Score from './score';
 
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
 
 const keys = [];
-
 document.addEventListener("keydown", function (e) {
     keys[e.keyCode] = true;
 });
@@ -17,16 +15,13 @@ document.addEventListener("keyup", function (e) {
     keys[e.keyCode] = false;
 });
 
-
-var score;
-
 let newClouds = [];
     
     var clouds = [];
     for ( let y = 0; y < canvas.height * 2; y += 40) {
         for (let i = 0; i < 4; i++) {
             let x = Math.random(i, y) * canvas.width;
-            if ( Math.random() < 0.5) {
+            if ( Math.random() < 0.3) {
                 clouds.push(new Cloud(ctx, x, y));
             }
         }
@@ -43,6 +38,7 @@ let newClouds = [];
 //     }
 
 const char = new Char(ctx);
+const score = new Score(ctx);
 
 class Game {
     constructor(){
@@ -63,27 +59,14 @@ class Game {
         }
     }
     
-    collide() {
-        debugger
-        let charLeft = char.x;
-        let charRight = char.x + char.charWidth;
-        let charTop = char.y + 5;
-
-        
-        let cloudLeft = cloud.x;
-        let cloudRight = cloud.x + cloud.cloudWidth;
-        let cloudTop = cloud.y;
-        let cloudBot = cloud.y + cloud.cloudHeight;
-        
-    }
-    
     draw() {
         this.keyHandle();
-        // translate(0, score);
-        // this.maxA = (this.y > this.maxA) ? this.y : this.maxA;
+        score.counter += 1;
+        score.drawScore();
+
+        let scoreCount = Math.floor(score.counter / 100);
 
         for (let i = 0; i < clouds.length; i++) {
-            debugger
             clouds[i].draw();
             if (clouds[i].collide(char)) {
                 char.vel_y = 0;
@@ -92,29 +75,77 @@ class Game {
             }
         }
 
-            if (Math.random() < 0.015) {
+        if (scoreCount < 5 ) {
+            if (Math.random() < 0.02) {
+            for (let i = 0; i < 10; i++) {
+                var x = Math.random(i) * canvas.width;
+            }
+            let y = 0;
+            newClouds.push(new Cloud(ctx, x, y));
+            }
+        } else if (scoreCount >= 5) {
+            if (Math.random() < 0.037) {
+            for (let i = 0; i < 10; i++) {
+                var x = Math.random(i) * canvas.width;
+            }
+            let y = 0;
+            newClouds.push(new Cloud(ctx, x, y));
+            }
+        } else if (scoreCount > 30) {
+            if (Math.random() < 0.057) {
                 for (let i = 0; i < 10; i++) {
                     var x = Math.random(i) * canvas.width;
                 }
                 let y = 0;
                 newClouds.push(new Cloud(ctx, x, y));
             }
-
-            newClouds.forEach(cloud => {
-                cloud.draw();
-                if (cloud.collide(char)) {
-                    char.vel_y = 0;
-                    char.y = cloud.y;
-                    char.jumped = false;
+        } else if (scoreCount > 35) {
+            if (Math.random() < 0.065) {
+                for (let i = 0; i < 10; i++) {
+                    var x = Math.random(i) * canvas.width;
                 }
-            });
-            newClouds = newClouds.filter(cloud => cloud.y < canvas.height);
-    }
-    
-    gameOver () {
+                let y = 0;
+                newClouds.push(new Cloud(ctx, x, y));
+            }
+        }
 
-    }
+        newClouds.forEach(cloud => {
+            cloud.draw();
+            if (cloud.collide(char)) {
+                char.vel_y = 0;
+                char.y = cloud.y;
+                char.jumped = false;
+            }
 
+            if (scoreCount > 5) {
+                cloud.y += 0.15;
+            }
+            if (scoreCount > 10) {
+                cloud.y += 0.15;
+            }
+            if (scoreCount > 15) {
+                cloud.y += 0.15;
+            }
+            if (scoreCount > 20) {
+                cloud.y += 0.15;
+            }
+            if (scoreCount > 25) {
+                cloud.y += 0.15;
+            }
+            if (scoreCount > 30) {
+                cloud.y += 0.15;
+            }
+            if (scoreCount > 35) {
+                cloud.y += 0.15;
+            }
+        });
+ 
+        newClouds = newClouds.filter(cloud => cloud.y < canvas.height);
+    }
+    gameOver() {
+        return char.hitBottom();
+    }
 }
+
 
 export default Game;
