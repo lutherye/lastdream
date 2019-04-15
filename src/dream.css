@@ -1,3 +1,24 @@
+.body {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+#game_over {
+    position: absolute;
+    left: 38%;
+    z-index: 2;
+    font-size: 60px;
+}
+
+.canvas {
+    margin: auto;
+    width: 1001px;
+    height: 564px;
+    z-index: 5;
+}
+
 #myCanvas {
     border: 1px solid black;
     background: url(https://longwallpapers.com/Desktop-Wallpaper/sky-background-For-Desktop-Wallpaper.jpg);

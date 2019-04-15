@@ -27,12 +27,12 @@ class Char {
 
     leftHandle() {
         if (this.vel_x < this.speed) {
-            this.vel_x -= 0.7;
+            this.vel_x -= 0.9;
         }
     }
     rightHandle() {
         if (this.vel_x < this.speed) {
-            this.vel_x += 0.7;
+            this.vel_x += 0.9;
         }
     }
     jumpHandle() {
@@ -59,7 +59,7 @@ class Char {
         this.vel_y += 0.5;
         this.y += this.vel_y;
         this.x += this.vel_x;
-        this.vel_x *= 0.8;
+        this.vel_x *= 0.7;
         this.vel_y *= 0.9;
         // if (this.y < this.maxA) {
         //     this.y = this.maxA;

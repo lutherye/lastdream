@@ -13,10 +13,9 @@ let score = new Score();
 function draw() {
     gameOver = gameOver || game.gameOver();
         if (gameOver) {
-
-            console.log('loser');
+            debugger
+            document.getElementById("game_over").style.zIndex = 10;
         } else {
-
             game.draw();
         }
     }
