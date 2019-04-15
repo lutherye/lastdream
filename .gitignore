@@ -21,5 +21,5 @@
 
 # Ignore heroku stuff
 
-bundle.js
-bundle.js.map
+# bundle.js
+# bundle.js.map
