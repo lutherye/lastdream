@@ -1,15 +1,17 @@
 
 class Char {
-    constructor(ctx) {
+    constructor(ctx, x) {
         this.ctx = ctx;
         this.charHeight = 10;
         this.charWidth = 10;
-        this.x = (ctx.canvas.width - 20) / 2;
-        this.y = (ctx.canvas.height - 20);
+        this.x = this.ctx.canvas.width / 2;
+        this.y = 0;
         this.vel_x = 0;
         this.vel_y = 0;
         this.jumped = true;
-        this.speed = 7;
+        this.speed = 5;
+        this.radius = 5;
+        this.maxA = this.ctx.canvas.height / 2;
     }
 
     hitBottom() {
@@ -20,6 +22,7 @@ class Char {
             this.vel_y = 0;
         }
     }
+
     leftHandle() {
         if (this.vel_x < this.speed) {
             this.vel_x -= 0.5;
@@ -32,13 +35,13 @@ class Char {
     }
     jumpHandle() {
         if (this.jumped == false) {
-            this.vel_y -= 20;
+            this.vel_y -= 50;
             this.jumped = true;
         }
     }
 
     drawChar() {
-        this.ctx.clearRect(0, 0, this.ctx.canvas.clientWidth, this.ctx.canvas.height);
+        this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
         this.ctx.beginPath();
         this.ctx.arc(this.x, this.y, this.charWidth, this.charHeight, Math.PI * 5);
         this.ctx.fillStyle = "#483D8B";
@@ -55,8 +58,11 @@ class Char {
         this.y += this.vel_y;
         this.x += this.vel_x;
         this.vel_x *= 0.9;
-        this.vel_y *= 0.9;
-
+        this.vel_y *= 0.7;
+        // if (this.y < this.maxA) {
+        //     this.y = this.maxA;
+        // } 
+        // this.maxA = (this.y  < this.ctx.canvas.height / 2) ? this.y / 2 : this.ctx.canvas.height / 2;
         this.hitBottom();
     }
 }
