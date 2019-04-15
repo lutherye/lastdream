@@ -1,5 +1,5 @@
 const img = new Image();
-img.src = "../img/ccc.png";
+img.src = "../lastdream/img/ccc.png";
 
 class Cloud {
     constructor(ctx, x, y) {
