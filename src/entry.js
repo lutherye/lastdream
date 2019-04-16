@@ -8,7 +8,8 @@ let game = new Game();
 let gameOver = false;
 
 function restartHandler(e){
-    if (game.gameOver && e.keyCode === 32) {
+    if (game.gameOver() && e.keyCode === 32) {
+        debugger
         location.reload();
     }
 }
