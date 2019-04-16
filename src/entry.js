@@ -9,7 +9,6 @@ let gameOver = false;
 
 function restartHandler(e){
     if (game.gameOver() && e.keyCode === 13) {
-        debugger
         location.reload();
     }
 }
