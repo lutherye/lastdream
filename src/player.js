@@ -1,6 +1,8 @@
+const sprite = new Image();
+sprite.src = "../lastdream/img/char.png";
 
 class Char {
-    constructor(ctx, x) {
+    constructor(ctx) {
         this.ctx = ctx;
         this.charHeight = 10;
         this.charWidth = 10;
@@ -12,6 +14,7 @@ class Char {
         this.speed = 5;
         this.radius = 5;
         this.maxA = this.ctx.canvas.height / 2;
+        this.sprite = sprite;
     }
 
     hitBottom() {
@@ -45,10 +48,17 @@ class Char {
     drawChar() {
         this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
         this.ctx.beginPath();
-        this.ctx.arc(this.x, this.y, this.charWidth, this.charHeight, Math.PI * 5);
-        this.ctx.fillStyle = "#483D8B";
+        this.ctx.arc(this.x, this.y, this.charWidth, 0, 2 * Math.PI);
+        this.ctx.fillStyle = "#979797";
+        this.ctx.stroke();
+        this.ctx.strokeStyle = "black";
+        this.ctx.lineWidth = 0.5;
         this.ctx.fill();
         this.ctx.closePath();
+        // this.ctx.drawImage( sprite,
+        //     0, 0, 682, 682,
+        //     this.x, this.y, this.charWidth, this.charHeight
+        // );
 
         if (this.x <= 0) {
             this.x = this.ctx.canvas.width - this.charWidth * 1.001;

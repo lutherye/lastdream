@@ -5,7 +5,8 @@ import Score from './score';
 
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
-
+// const sprite = new Image();
+// sprite.src = "../img/char.png";
 
 const keys = [];
 document.addEventListener("keydown", function (e) {

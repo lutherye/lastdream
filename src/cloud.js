@@ -30,7 +30,7 @@ class Cloud {
         var charTop = char.y + 5;
         var charBot = char.y + char.charHeight - 10;
 
-        if (Math.abs(cloudTop - charBot) < 3 && char.vel_y > 0) {
+        if (Math.abs(cloudTop - charBot) < 5 && char.vel_y > 0) {
             if ((charLeft >= cloudLeft && charLeft <= cloudRight) || (charRight >= cloudLeft && charRight <= cloudRight)) {
                 return true;
             } 
