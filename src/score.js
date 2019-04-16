@@ -8,7 +8,7 @@ class Score {
     drawScore() {
         let score = Math.floor(this.counter / 100);
         this.ctx.font = "16px Arial";
-        this.ctx.fillStyle = "white";
+        this.ctx.fillStyle = "black";
         this.ctx.fillText("Score: " + score, 8, 20);
 
     }

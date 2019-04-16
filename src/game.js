@@ -97,7 +97,7 @@ class Game {
             newClouds.push(new Cloud(ctx, x, y));
             }
         } else if (scoreCount >= 15) {
-            if (Math.random() < 0.08) {
+            if (Math.random() < 0.7) {
                 for (let i = 0; i < 9; i++) {
                     var x = Math.random(i) * canvas.width;
                 }
@@ -105,7 +105,7 @@ class Game {
                 newClouds.push(new Cloud(ctx, x, y));
             }
         else if (scoreCount >= 20) {
-            if (Math.random() < 0.2) {
+            if (Math.random() < 1.2) {
                 for (let i = 0; i < 9; i++) {
                     var x = Math.random(i) * canvas.width;
                 }
@@ -114,7 +114,7 @@ class Game {
             }
         }
         else if (scoreCount >= 25) {
-            if (Math.random() < 0.3) {
+            if (Math.random() < 1.8) {
                 for (let i = 0; i < 9; i++) {
                     var x = Math.random(i) * canvas.width;
                 }
@@ -123,7 +123,7 @@ class Game {
             }
         }
         } else if (scoreCount >= 30) {
-            if (Math.random() < 0.45) {
+            if (Math.random() < 3) {
                 for (let i = 0; i < 9; i++) {
                     var x = Math.random(i) * canvas.width;
                 }
@@ -131,7 +131,7 @@ class Game {
                 newClouds.push(new Cloud(ctx, x, y));
             }
         } else if (scoreCount >= 35) {
-            if (Math.random() < 0.5) {
+            if (Math.random() < 3.9) {
                 for (let i = 0; i < 9; i++) {
                     var x = Math.random(i) * canvas.width;
                 }
@@ -139,7 +139,7 @@ class Game {
                 newClouds.push(new Cloud(ctx, x, y));
             }
         } else if (scoreCount >= 40) {
-            if (Math.random() < 0.6) {
+            if (Math.random() < 4.9) {
                 for (let i = 0; i < 9; i++) {
                     var x = Math.random(i) * canvas.width;
                 }
