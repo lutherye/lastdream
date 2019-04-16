@@ -1,23 +1,33 @@
 .body {
     display: flex;
     align-items: center;
-    height: 100vh;
+    font-family: 'Fredericka the Great', cursive;
     position: relative;
     flex-direction: column;
 }
 
 .title {
     margin: auto;
-    font-size: 40px;
+    font-size: 60px;
+    padding: 30px;
+    font-family: 'Fredericka the Great', cursive;
 }
 
 #game_over {
     position: absolute;
-    top: 50%;
-    left: 38%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    top: 65%;
     z-index: 2;
     font-size: 60px;
-    font-weight: bold;                       
+    font-weight: bold;  
+    font-family: 'Fredericka the Great', cursive;                     
+}
+
+.restart {
+    font-size: 24px;
 }
 
 .canvas {
@@ -46,8 +56,24 @@
 }
 
 .instructions {
+    font-family: 'Fredericka the Great', cursive;
     margin: 0 auto;
     display: flex;
     width: 100%;
     justify-content: space-around;
+    padding: 40px 0;
+    font-size: 20px;
+}
+
+.personal {
+    margin: 0 auto;
+}
+
+.linkedin {
+    margin-right: 20px;
+    font-size: 36px;
+}
+
+.github {
+    font-size: 36px;
 }

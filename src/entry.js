@@ -7,13 +7,16 @@ const ctx = canvas.getContext("2d");
 let game = new Game();
 let gameOver = false;
 
-
-
+function restartHandler(e){
+    if (game.gameOver && e.keyCode === 32) {
+        location.reload();
+    }
+}
+document.addEventListener("keydown", restartHandler);
 
 function draw() {
     gameOver = gameOver || game.gameOver();
         if (gameOver) {
-            debugger
             document.getElementById("game_over").style.zIndex = 10;
         } else {
             game.draw();

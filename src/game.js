@@ -15,6 +15,8 @@ document.addEventListener("keyup", function (e) {
     keys[e.keyCode] = false;
 });
 
+
+
 let newClouds = [];
     
     var clouds = [];
@@ -36,6 +38,8 @@ let newClouds = [];
 //             clouds.push(new Cloud(ctx, x, y));
 //         }
 //     }
+
+
 
 const char = new Char(ctx);
 const score = new Score(ctx);
@@ -100,7 +104,7 @@ class Game {
                 newClouds.push(new Cloud(ctx, x, y));
             }
         else if (scoreCount >= 20) {
-            if (Math.random() < 0.16) {
+            if (Math.random() < 0.2) {
                 for (let i = 0; i < 9; i++) {
                     var x = Math.random(i) * canvas.width;
                 }
@@ -109,7 +113,7 @@ class Game {
             }
         }
         else if (scoreCount >= 25) {
-            if (Math.random() < 0.25) {
+            if (Math.random() < 0.3) {
                 for (let i = 0; i < 9; i++) {
                     var x = Math.random(i) * canvas.width;
                 }
@@ -118,14 +122,6 @@ class Game {
             }
         }
         } else if (scoreCount >= 30) {
-            if (Math.random() < 0.4) {
-                for (let i = 0; i < 9; i++) {
-                    var x = Math.random(i) * canvas.width;
-                }
-                let y = 0;
-                newClouds.push(new Cloud(ctx, x, y));
-            }
-        } else if (scoreCount >= 35) {
             if (Math.random() < 0.45) {
                 for (let i = 0; i < 9; i++) {
                     var x = Math.random(i) * canvas.width;
@@ -133,8 +129,16 @@ class Game {
                 let y = 0;
                 newClouds.push(new Cloud(ctx, x, y));
             }
+        } else if (scoreCount >= 35) {
+            if (Math.random() < 0.5) {
+                for (let i = 0; i < 9; i++) {
+                    var x = Math.random(i) * canvas.width;
+                }
+                let y = 0;
+                newClouds.push(new Cloud(ctx, x, y));
+            }
         } else if (scoreCount >= 40) {
-            if (Math.random() < 0.55) {
+            if (Math.random() < 0.6) {
                 for (let i = 0; i < 9; i++) {
                     var x = Math.random(i) * canvas.width;
                 }
@@ -183,6 +187,8 @@ class Game {
     gameOver() {
         return char.hitBottom();
     }
+
+    
 }
 
 

@@ -61,10 +61,7 @@ class Char {
         this.x += this.vel_x;
         this.vel_x *= 0.7;
         this.vel_y *= 0.9;
-        // if (this.y < this.maxA) {
-        //     this.y = this.maxA;
-        // } 
-        // this.maxA = (this.y  < this.ctx.canvas.height / 2) ? this.y / 2 : this.ctx.canvas.height / 2;
+
         this.hitBottom();
     }
 }
