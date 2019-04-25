@@ -49,7 +49,7 @@ class Char {
         this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
         this.ctx.beginPath();
         this.ctx.arc(this.x, this.y, this.charWidth, 0, 2 * Math.PI);
-        this.ctx.fillStyle = "#979797";
+        this.ctx.fillStyle = "#7a7a7a";
         this.ctx.stroke();
         this.ctx.strokeStyle = "black";
         this.ctx.lineWidth = 0.5;
