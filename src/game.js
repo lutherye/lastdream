@@ -10,9 +10,11 @@ const ctx = canvas.getContext("2d");
 
 const keys = [];
 document.addEventListener("keydown", function (e) {
+    e.preventDefault();
     keys[e.keyCode] = true;
 });
 document.addEventListener("keyup", function (e) {
+    e.preventDefault();
     keys[e.keyCode] = false;
 });
 
@@ -29,18 +31,6 @@ let newClouds = [];
             }
         }
     }
-    // return clouds;
-// }
-
-//     for (let i = 0; i < 4; i++) {
-//         for (let j = 0; j < 4; j++) {
-//             let x = Math.random(i, j) * canvas.width;
-//             let y = Math.random(j, i) * canvas.height;
-//             clouds.push(new Cloud(ctx, x, y));
-//         }
-//     }
-
-
 
 const char = new Char(ctx);
 const score = new Score(ctx);
@@ -59,7 +49,6 @@ class Game {
             
         }
         if (keys[32]) {
-            
             char.jumpHandle();
         }
     }
