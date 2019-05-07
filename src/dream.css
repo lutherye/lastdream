@@ -4,6 +4,8 @@
     font-family: 'Fredericka the Great', cursive;
     position: relative;
     flex-direction: column;
+    background-image: url("../img/sky.jpg");
+    background-repeat: no-repeat;
 }
 
 .title {

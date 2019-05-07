@@ -15,11 +15,13 @@ function restartHandler(e){
 document.addEventListener("keydown", restartHandler);
 
 function draw() {
+
     gameOver = gameOver || game.gameOver();
         if (gameOver) {
             document.getElementById("game_over").style.zIndex = 10;
         } else {
             game.draw();
+            
         }
     }
 

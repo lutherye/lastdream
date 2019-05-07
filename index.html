@@ -7,21 +7,11 @@
     <link rel="stylesheet" type="text/css" href="../lastdream/src/dream.css">
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+
     <title>Last Dream</title>
 </head>
 
-<!-- <body onload="resizeCanvas();"> -->
-    <!-- <body>
-        <div id="play">
-            Play
-        </div> -->
-    <!-- <script>
-        function resizeCanvas() {
-            var canv = document.getElementById("myCanvas");
-            canv.width = window.innerWidth * 0.8;
-            canv.height = window.innerHeight * 0.7;
-        }
-    </script> -->
 <body class="body">
     <div id="game_over">
         <span>GAME OVER</span>
@@ -43,6 +33,22 @@
 
         </div>
     </div>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyARRVqvAsP_-sBL6CnzsG8q1q3uPyVayEk",
+            authDomain: "last-dream.firebaseapp.com",
+            databaseURL: "https://last-dream.firebaseio.com",
+            projectId: "last-dream",
+            storageBucket: "last-dream.appspot.com",
+            messagingSenderId: "520732986427",
+            appId: "1:520732986427:web:5d7d99f6672505da"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        console.log(firebase);
+        var database = firebase.database();
+    </script>
     <script src="./dist/bundle.js"></script>
 </body>
 
