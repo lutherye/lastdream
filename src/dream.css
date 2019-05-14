@@ -73,20 +73,46 @@
     justify-content: center;
 }
 
+.personal:hover {
+    color: #25abe9;
+}
+
+.site {
+    margin-right: 20px;
+    font-size: 36px;
+    color: black;
+}
+
+.site:hover {
+    color: #0020af;
+}
+
+.angellist {
+    margin-right: 20px;
+    font-size: 36px;
+    color: black;
+}
+
+.angellist:hover {
+    color: white;
+}
+
 .linkedin {
     margin-right: 20px;
     font-size: 36px;
     color: black;
 }
+
 .linkedin:hover {
     color: #25abe9;
 }
 
 .github:hover {
-    color: #25abe9;
+    color: #6e7579;
 }
 
 .github {
     font-size: 36px;
     color: black;
+    margin-right: 20px;
 }
