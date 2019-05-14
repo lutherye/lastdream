@@ -10,18 +10,18 @@ const ctx = canvas.getContext("2d");
 
 const keys = [];
 document.addEventListener("keydown", function (e) {
-    e.preventDefault();
+    if (e.keyCode === 32 ) {
+        e.preventDefault();
+    }
     keys[e.keyCode] = true;
 });
+
 document.addEventListener("keyup", function (e) {
-    e.preventDefault();
     keys[e.keyCode] = false;
 });
 
 
-
 let newClouds = [];
-    
     var clouds = [];
     for ( let y = 0; y < canvas.height * 2; y += 30) {
         for (let i = 0; i < 4; i++) {
@@ -41,12 +41,10 @@ class Game {
     keyHandle() {
         char.drawChar();
         if (keys[65]) {
-            
             char.leftHandle();
         }
         if (keys[68]) {
             char.rightHandle();
-            
         }
         if (keys[32]) {
             char.jumpHandle();
@@ -175,7 +173,6 @@ class Game {
             if (scoreCount > 40) {
                 cloud.y += 0.15;
             }
-
         });
  
         newClouds = newClouds.filter(cloud => cloud.y < canvas.height);
