@@ -21,7 +21,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    top: 65%;
+    top: 85%;
     z-index: 2;
     font-size: 60px;
     font-weight: bold;  
@@ -64,10 +64,13 @@
     width: 100%;
     justify-content: space-around;
     padding: 40px 0;
-    font-size: 20px;
+    font-weight: 100;
+    font-size: 24px;
+    color: white;
 }
 
 .personal {
+    padding-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: center;
