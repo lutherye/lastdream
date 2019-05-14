@@ -20,6 +20,6 @@
 /config/master.key
 
 # Ignore heroku stuff
-
+.DS_Store
 # bundle.js
 # bundle.js.map
